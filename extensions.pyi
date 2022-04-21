@@ -1,0 +1,13 @@
+import vk_api as __vk_api
+import typing
+
+
+def save_captcha(captcha:any, filename:str='captcha.jpg') -> None: ...
+
+
+class VkApi(__vk_api.VkApi):
+
+    def __init__(self, login:str, password:str, token:str=None, auth_handler:typing.Callable[[any], tuple[str, bool]]=None,
+                 captcha_handler:typing.Callable[[any], any]=None, app_id=6222115) -> None: ...
+    def auth_handler(self) -> tuple[str, bool]: ...
+    def captcha_handler(self, captcha:any) -> any: ...

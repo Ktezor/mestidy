@@ -14,9 +14,9 @@ class VkApi(__vk_api.VkApi):
 
     def __init__(self, login, password, token=None, auth_handler=None, captcha_handler=None, app_id=6222115):
 
-        super().__init__(self, login=login, password=password, token=token, auth_handler=auth_handler,
+        super().__init__(login=login, password=password, token=token, auth_handler=auth_handler,
                          captcha_handler=captcha_handler, app_id=app_id)
-        config = {
+        self.config = {
             'remember_2fa': True
         }
 
